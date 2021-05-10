@@ -105,7 +105,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSQCKXBiVI7WOXQRNLLMH8iBt-izu3V2gSSL0I95jNG_A59ikqcLy2TKxbFggCwMvryiW_UfxgGrhbk/pubhtml',
+        url: 'https://docs.google.com/spreadsheets/d/{1p8qOvQrtSHBRFoIKeCrfofpIxrOOnjPPxd5mCjZ5s8Q}/gviz/tq?tqx=out:csv&sheet={Projects}',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
@@ -123,14 +123,14 @@
             //Add the the layer to the map
             map.addLayer({
               'id': 'csvData',
-              'type': 'star',
+              'type': 'circle',
               'source': {
                 'type': 'geojson',
                 'data': data
               },
               'paint': {
                 'circle-radius': 5,
-                'circle-color': "blue"
+                'circle-color': "purple"
               }
             });
 
