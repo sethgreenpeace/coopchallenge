@@ -91,8 +91,8 @@
       };
     };
     //YOUR TURN: add your Mapbox token
-    
-    mapboxgl.accessToken = 'pk.eyJ1Ijoic2V0aGdyZWVucGVhY2UiLCJhIjoiY2tvajA0ZzVuMDR6ZzJ3cHA1b2J6NDZhNCJ9.Onu7AEE_0b6ONvysrRs50g'; //Mapbox token 
+
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic2V0aGdyZWVucGVhY2UiLCJhIjoiY2tvajA0ZzVuMDR6ZzJ3cHA1b2J6NDZhNCJ9.Onu7AEE_0b6ONvysrRs50g'; //Mapbox token
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/sethgreenpeace/ckoj07zw11da118oyd1ugq4n5', // YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
@@ -129,8 +129,8 @@
                 'data': data
               },
               'paint': {
-                'circle-radius': 20,
-                'circle-color': "purple"
+                'circle-radius': 10,
+                'circle-color': "red"
               }
             });
 
@@ -143,7 +143,8 @@
               //set popup text
               //You can adjust the values of the popup to match the headers of your CSV.
               // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
-              var description = `<h3>` + e.features[0].properties.Name + `</h3>` + `<h4>` + `<b>` + `Description: ` + `</b>` + e.features[0].properties.Description + `</h4>` + `<h4>` + `<b>` + `Link: ` + `</b>` + e.features[0].properties.Link + `</h4>`;
+              var projectlink = `<h4><a href="${row.Link}">ProjectLink</a></h4>`;
+              var description = `<h3>` + e.features[0].properties.Name + `</h3>` + `<h4>` + `<b>` + `Description: ` + `</b>` + e.features[0].properties.Description + `</h4>` + `<h4>` + `<b>` + `Link: ` + `</b>` + e.features[0].properties.Link + `</h4>` + projectlink;
 
               // Ensure that if the map is zoomed out such that multiple
               // copies of the feature are visible, the popup appears
