@@ -155,26 +155,11 @@
                   var coordinates = e.features[0].geometry.coordinates.slice();
 
                   //set popup text
-                  //You can adjust the values of the popup to match the headers of your CSV.
-                  // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
-                  var projectLink = `<a href="${data.Link}">Project Link</a>`;
+              //You can adjust the values of the popup to match the headers of your CSV.
+              // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
+              var description = `<h3>` + e.features[0].properties.Name + `</h3>` + `<h4>` + `<b>` + `Expert in: ` + `</b>` + e.features[0].properties.Expert_In + `</h4>` + `<h4>` + `<b>` + `Seeking support: ` + `</b>` + e.features[0].properties["Seeking Support With"] + `</h4>` + `<h4>` + `<b>` + `Website: ` + `</b>`+ '<p><a href="' + e.features[0].properties.Link + '" target="_blank">' + '<p>Link</p>' + '</a></p>';
 
-                  var description =
-                    `<h3>` +
-                    e.features[0].properties.Name +
-                    `</h3>` +
-                    `<h4>` +
-                    `<b>` +
-                    "Expert In: " +
-                    `</b>` +
-                    e.features[0].properties["Expert_In"] +
-                    `</h4>` +
-                    `<h4>` +
-                    `<b>` +
-                    `Link: ` +
-                    `</b>` +
-                    projectLink +
-                    `</h4>`;
+              //
 
                   // Ensure that if the map is zoomed out such that multiple
                   // copies of the feature are visible, the popup appears
